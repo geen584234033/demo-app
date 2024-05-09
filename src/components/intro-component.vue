@@ -4,7 +4,7 @@
       <v-app-bar dense absolute flat scroll-off-screen color="transparent">
         <v-toolbar-title class="white--text"> {{ "</> Developer" }}</v-toolbar-title>
         <v-spacer />
-        <div v-if="!$vuetify.breakpoint.mobile">
+        <div v-if="!$vuetify.breakpoint.smAndDown">
         <v-menu  v-for="menu in menuAppbar" :key="menu.title" open-on-hover left>
           <template v-slot:activator="{ on, attrs }">
             <v-btn v-bind="attrs" v-on="on" dense text color="white"> {{ menu.title  }} <v-icon>
