@@ -1,4 +1,8 @@
 <template>
+  <v-carousel  v-model="model" width="100%" height="auto"  :show-arrows="false" cycle hide-delimiter-background
+    show-arrows-on-hover>
+    <v-carousel-item v-for="menu in menuAppbar" :key="menu.title">
+      <v-sheet>
   <div class="box">
     <v-app style="background-color: transparent; height: auto; width: auto">
       <v-app-bar dense absolute flat scroll-off-screen color="transparent">
@@ -33,13 +37,16 @@
     </div>
     </v-app>
   </div>
+</v-sheet>
+</v-carousel-item>
+</v-carousel>
 </template>
 <script>
 export default {
   name: "introComponent",
   data() {
     return {
-        isMobile: false,
+      model: 0,
       menuAppbar: [
         { title: "HOME", menu: [{ name: "home1" }, { name: "home2" }] },
         { title: "ABOUT US", menu: [{ name: "about1" }, { name: "about2" }] },
